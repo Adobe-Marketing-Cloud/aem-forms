@@ -1,7 +1,9 @@
 address-lookup-widget
 ======
 
-This a content package project generated using the simple-content-package-archetype.
+Adaptive Form provides ability to configure a cutom widget for a particular field or set of fields. It exposes certain APIs and event that the custom widget has to implement and dispatch in order to work well with rest of the Adaptive Form infrastructure. In this sample, we have added a custom address lookup widget which is based on [jquery autocomplete widget] (http://jqueryui.com/autocomplete/) and pulls data from [geonames.org](http://www.geonames.org/) REST endpoint.
+
+This a content package project generated using the simple-content-package-archetype. This package would contain the widget javascript under /etc/clientlibs/custom-widgets/addresslookup folder and a sample Adaptive Form demonstrating usage of the widget.
 
 Building
 --------
@@ -24,5 +26,4 @@ Specifying CRX Host/Port
 
 The CRX host and port can be specified on the command line with:
 mvn -Dcrx.host=otherhost -Dcrx.port=5502 <goals>
-
 
