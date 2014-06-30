@@ -1,0 +1,4 @@
+#base=css
+jquery.ui.core.css
+jquery.ui.theme.css
+jquery.ui.autocomplete.css

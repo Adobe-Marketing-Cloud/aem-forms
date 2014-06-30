@@ -1,0 +1,21 @@
+.find_button_align .guideFieldWidget {
+	width: 100%;
+}
+
+@media (min-width: 1200px) {
+	.ok_button_align {
+        padding-left: 84%;
+    }
+}
+
+@media (min-width: 991px) and (max-width: 1199px) {
+	.ok_button_align {
+        padding-left: 82%;
+    }
+}
+
+@media (min-width: 991px) {
+    .find_button_align {
+        padding-left: 31%;
+    }
+}
