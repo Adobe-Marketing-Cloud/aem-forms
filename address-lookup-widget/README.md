@@ -3,7 +3,7 @@ address-lookup-widget
 
 Adaptive Form provides ability to configure a cutom widget for a particular field or set of fields. It exposes certain APIs and event that the custom widget has to implement and dispatch in order to work well with rest of the Adaptive Form infrastructure. In this sample, we have added a custom address lookup widget which is based on [jquery autocomplete widget] (http://jqueryui.com/autocomplete/) and pulls data from [geonames.org](http://www.geonames.org/) REST endpoint.
 
-This a content package project generated using the simple-content-package-archetype. This package would contain the widget javascript under /etc/clientlibs/custom-widgets/addresslookup folder and a sample Adaptive Form demonstrating usage of the widget at http://<host>:<port>/content/forms/af/widget-sample/addreslookupsample.html once that package is deployed.
+This a content package project generated using the simple-content-package-archetype. This package would contain the widget javascript under /etc/clientlibs/custom-widgets/addresslookup folder and a sample Adaptive Form demonstrating usage of the widget at http://localhost:4502/content/forms/af/widget-sample/addreslookupsample.html once that package is deployed.
 
 Building
 --------
