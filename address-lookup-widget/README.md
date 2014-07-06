@@ -27,3 +27,5 @@ Specifying CRX Host/Port
 The CRX host and port can be specified on the command line with:
 mvn -Dcrx.host=otherhost -Dcrx.port=5502 <goals>
 
+
+_Note: We have used demo account for accessing geonames REST endpoint which may hit daily limit of demo account request counts. You can register and use your own user account for accessing geonames services. Few details [here](http://www.geonames.org/export/JSON-webservices.html)._
