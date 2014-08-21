@@ -53,8 +53,8 @@ if [ -n $1 ]; then
     echo layout: sample >> $sampleinstructions
     author=`git log --pretty=format:"%ae;%an" -- $sampleName | sort -k 3 -t ';' | uniq -c | sort -r | head -1 | sed -n 's/[0-9][0-9]*\s\([a-z@\.;]*\)/\1/p'`
     author=($(echo $author | tr ';' ' '))
-    echo authoremail:${author[0]} >> $sampleinstructions
-    echo authorname:${author[1]} >> $sampleinstructions
+    echo authoremail: ${author[0]} >> $sampleinstructions
+    echo authorname: ${author[1]} >> $sampleinstructions
     authorhash=`echo -n ${author[1]} | md5sum | sed 's/\([a-zA-Z0-9][a-zA-Z0-9]*\)\s\s-/\1/'`
     echo authorhash: $authorhash >> $sampleinstructions
     echo --- >> $sampleinstructions
