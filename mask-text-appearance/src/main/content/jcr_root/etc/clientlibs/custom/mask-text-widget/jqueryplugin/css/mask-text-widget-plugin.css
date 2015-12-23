@@ -1,0 +1,10 @@
+/*
+ * The file is a template for adding CSS related to the JQuery plugin being used for the custom appearance.
+ * Please ensure that the CSS file contains items which are only applicable to the specific widget class to
+ * avoid impacting other elements in the Adaptive Form.
+ */
+
+ /*
+  * In case you want to add multiple files or use custom file name, place the file in the current location,
+  * and update the css.txt file in the parent folder to include the new files.
+  */
