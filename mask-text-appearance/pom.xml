@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <!-- ====================================================================== -->
@@ -11,7 +12,12 @@
     <packaging>content-package</packaging>
     <name>mask-text-widget</name>
     <description>mask-text-appearance-widget</description>
-
+    <properties>
+        <crx.host>localhost</crx.host>
+        <crx.port>4502</crx.port>
+        <crx.username>admin</crx.username>
+        <crx.password>admin</crx.password>
+    </properties>
     <!-- ====================================================================== -->
     <!-- Inclusion of repositories in POMs is controversial, to say the least.  -->
     <!-- It would be best if you proxied the Adobe repository using a Maven     -->
@@ -68,8 +74,34 @@
                         <createdBy>Adobe Systems Incorporated</createdBy>
                         <acHandling>merge_preserve</acHandling>
                     </properties>
+                    <failOnError>true</failOnError>
+                    <userId>${crx.username}</userId>
+                    <password>${crx.password}</password>
+                    <targetURL>http://${crx.host}:${crx.port}/crx/packmgr/service.jsp</targetURL>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+    <profiles>
+        <profile>
+            <id>autoInstall</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.day.jcr.vault</groupId>
+                        <artifactId>content-package-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>install-content-package</id>
+                                <phase>install</phase>
+                                <goals>
+                                    <goal>install</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
