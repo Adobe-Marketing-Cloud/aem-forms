@@ -1,3 +1,0 @@
-#base=css
-
-mask-text-widget-plugin.css

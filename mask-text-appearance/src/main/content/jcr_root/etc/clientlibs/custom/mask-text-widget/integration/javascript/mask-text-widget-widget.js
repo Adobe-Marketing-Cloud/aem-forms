@@ -1,33 +1,6 @@
 (function($) {
-    /*
-     * As a sample the class is extending from textField, choose the required class to extend from (based on requirement):
-     * - $.xfaWidget.abstractWidget: This is the parent of all the other widgets, and should be used only when any
-     *                                specific widget below is not applicable.
-     * - $.xfaWidget.defaultWidget: This widget extends from Abstract widget and provides the default implementation for
-     *                               render, getOptionsMap and getCommitValue.
-     * - $.xfaWidget.dateTimeEdit: This is Out-of-the-box widget for Date Picker.
-     * - $.xfaWidget.dropDownList: This is Out-of-the-box widget for Drop-down list.
-     * - $.xfaWidget.listBoxWidget: This is Out-of-the-box widget for List box (Drop-down
-     *                              list with multi-select enabled).
-     * - $.xfaWidget.numericInput: This is Out-of-the-box widget for Numeric fields.
-     * - $.xfaWidget.signatureField: This is Out-of-the-box widget for Signature fields.
-     * - $.xfaWidget.textField: This is Out-of-the-box widget for Text fields.
-     * - $.xfaWidget.xfaButton: This is Out-of-the-box widget for buttons.
-     * - $.xfaWidget.XfaCheckBox: This is Out-of-the-box widget for Check box and radio buttons fields.
-     */
-
     $.widget( "xfaWidget.masktextwidget", $.xfaWidget.textField, {
         _widgetName:"masktextwidget",
-
-        /*
-         * The render function updates the HTML widget UI by invoking the JQuery plugin.
-         * Every Adaptive Forms field uses a default html element for taking input, example: for Date Field the element
-         * is <input type='date'>. The render function of the abstractWidget returns that element.
-         */
-        render : function() {
-           var $el = $.xfaWidget.textField.prototype.render.apply(this,arguments);
-           return $el;
-        },
 
         /*
          * For reflecting the model changes the widget can register for the listeners in the getOptionsMap function.
@@ -57,33 +30,15 @@
          * widget).
          */
         getOptionsMap: function(){
-           var parentOptionsMap = $.xfaWidget.textField.prototype.getOptionsMap.apply(this,arguments),
-           newMap = $.extend({},parentOptionsMap,
-                               {
-                                   "displayValue":function(value) {
-                                       this.$userControl.val(value);
-                                   },
-                                   //...
-                              });
-           return newMap;
-        },
-
-        /*
-         * To enable the widget to throw XFA events that, we need to modify the getEventMap function. The function
-         * returns a mapping of html events to the XFA events. The code below provides a mapping which essentially tells
-         * the XFA framework that whenever html triggers focus on the datepicker element (the $userControl element)
-         * execute the XFA enter event and run any script written on that event for this field.
-         * In case the custom widget requires to throw an HTML blur / change event on non-default actions as well, then
-         * a custom event may be dispatched, and the custom event may be mapped with the XFA event below.
-         */
-        getEventMap: function() {
-            var parentEventMap = $.xfaWidget.textField.prototype.getEventMap.apply(this,arguments),
-            newMap = $.extend({},parentEventMap,
-                               {
-                                    blur: "xfaexit"
-                                   //...
-                              });
-           return newMap;
+            var parentOptionsMap = $.xfaWidget.textField.prototype.getOptionsMap.apply(this,arguments),
+                newMap = $.extend({},parentOptionsMap,
+                    {
+                        "displayValue":function(value) {
+                            this.showDisplayValue();
+                        }
+                        //...
+                    });
+            return newMap;
         },
 
         /*
@@ -97,20 +52,11 @@
          * and it is the responsibility of the widget to implement how it wants these values to appear to the user.
          */
         showDisplayValue: function() {
-           this.$userControl.val(this.options.displayValue)
-        },
-
-        showValue: function() {
-            this.$userControl.val(this.options.value)
-        },
-
-        /*
-         * According to the specification the value returned by the getCommitValue function of the widget is set to be
-         * the value of the field. The framework calls the getCommitValue function to get the value at appropriate event
-         * (The event for most fields is exit event, except for dropdown where the event can be change/exit).
-         */
-        getCommitValue: function() {
-            return this.$userControl.val();
+            if (this.options.displayValue != null) {
+                this.$userControl.val(this.options.displayValue.replace( /./g, "*"));
+            } else {
+                this.$userControl.val("");
+            }
         }
     });
 })(jQuery);
