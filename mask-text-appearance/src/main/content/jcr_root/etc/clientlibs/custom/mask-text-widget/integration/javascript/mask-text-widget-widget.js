@@ -16,8 +16,8 @@
      * - $.xfaWidget.XfaCheckBox: This is Out-of-the-box widget for Check box and radio buttons fields.
      */
 
-    $.widget( "xfaWidget.__widgetName__", $.xfaWidget.textField, {
-        _widgetName:"__widgetName__",
+    $.widget( "xfaWidget.masktextwidget", $.xfaWidget.textField, {
+        _widgetName:"masktextwidget",
 
         /*
          * The render function updates the HTML widget UI by invoking the JQuery plugin.
@@ -80,7 +80,7 @@
             var parentEventMap = $.xfaWidget.textField.prototype.getEventMap.apply(this,arguments),
             newMap = $.extend({},parentEventMap,
                                {
-                                    blur: "xfaexit",
+                                    blur: "xfaexit"
                                    //...
                               });
            return newMap;
