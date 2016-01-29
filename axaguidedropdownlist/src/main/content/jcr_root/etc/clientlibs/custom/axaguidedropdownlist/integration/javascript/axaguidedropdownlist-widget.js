@@ -28,6 +28,10 @@
         render : function() {
             this.element.addClass(this._widgetName);
             var $el = this.element.children("select");
+            var dropdown = this.element.data('axa.dropdown')
+            if (!dropdown) {
+                this.element.dropdown();
+            }
             return $el;
         },
 
@@ -59,9 +63,19 @@
          * widget).
          */
         getOptionsMap: function(){
-            // Parent widget assumes the control element to be select which is valid here as well. So
-            // not changing anything and calling the super function
-            return $.xfaWidget.dropDownList.prototype.getOptionsMap.apply(this,arguments)
+            // Parent widget assumes the control element to be select which is valid here as well.
+            // We need to change the behaviour of value option, since the AXA DropDown Plugin calls a function
+            // on change of the drop down value. Now when the value is changed from script, we also need to call that
+            // function
+            var parentOptionsMap =  $.xfaWidget.dropDownList.prototype.getOptionsMap.apply(this,arguments)
+            var newMap = $.extend({}, parentOptionsMap, {
+                "value" : function () {
+                    parentOptionsMap.value.apply(this, arguments);
+                    var dropdown = this.element.data("axa.dropdown");
+                    dropdown.setLabelText();
+                }
+            });
+            return newMap;
         },
 
         /*
@@ -91,7 +105,7 @@
         },
 
         showValue: function() {
-            this.$userControl.val(this.options.value)
+            //do nothing since we do not want the change the visible value whe user puts focus on the field
         },
 
         /*
