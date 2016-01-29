@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>axaguidedropdownlist</comment>
+<entry key="createdBy">Adobe Systems Incorporated</entry>
+<entry key="name">axaguidedropdownlist</entry>
+<entry key="acHandling">merge_preserve</entry>
+<entry key="created">2016-01-29T11:57:15.815+0530</entry>
+<entry key="groupId">com.adobe.afsamples</entry>
+<entry key="version">1.0-SNAPSHOT</entry>
+<entry key="requiresRoot">false</entry>
+<entry key="description">Axa-Guide-DropDownList</entry>
+<entry key="group">aemformsamples</entry>
+<entry key="artifactId">axaguidedropdownlist</entry>
+<entry key="path">/etc/packages/aemformsamples/axaguidedropdownlist.zip</entry>
+</properties>

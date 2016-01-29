@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" height="2048" width="2048" viewBox="0 0 2048 2048">
+    <title>Xing</title>
+    <defs>
+        <mask maskUnits="userSpaceOnUse" x="13.431" y="30.62" width="36.25" height="24.595" id="c">
+            <g filter="url(#a)">
+                <linearGradient id="b" gradientUnits="userSpaceOnUse" x1="41.233" y1="27.781" x2="28.367" y2="50.066">
+                    <stop offset=".006" stop-color="#FFF"/>
+                    <stop offset=".013" stop-color="#F6F6F6"/>
+                    <stop offset=".053" stop-color="#C8C8C8"/>
+                    <stop offset=".098" stop-color="#9D9D9D"/>
+                    <stop offset=".146" stop-color="#777"/>
+                    <stop offset=".199" stop-color="#575757"/>
+                    <stop offset=".257" stop-color="#3B3B3B"/>
+                    <stop offset=".322" stop-color="#252525"/>
+                    <stop offset=".399" stop-color="#141414"/>
+                    <stop offset=".493" stop-color="#090909"/>
+                    <stop offset=".626" stop-color="#020202"/>
+                    <stop offset=".994"/>
+                </linearGradient>
+                <path d="M50.28 35.792l-.004-.028v-.027c0-2.63-2.172-4.77-4.84-4.77h-.033c-4.265-.18-8.78-.265-13.417-.256-4.645-.007-9.162.08-13.426.256h-.03c-.735 0-1.432.164-2.056.453L49.917 51.98c.23-.557.358-1.164.358-1.8v-.028l.003-.027c.175-2.308.262-4.72.254-7.17.01-2.448-.078-4.86-.253-7.165zM45.403 54.96l.015-.002h.016c.773 0 1.505-.18 2.155-.5l-10.36.726c2.8-.04 5.538-.115 8.174-.225z"
+                      fill="url(#b)"/>
+            </g>
+        </mask>
+        <filter color-interpolation-filters="sRGB" id="a" filterUnits="userSpaceOnUse" x="13.431" y="30.62"
+                width="36.25" height="24.595">
+            <feColorMatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0"/>
+        </filter>
+    </defs>
+    <path d="M0 0v2048h2048V0H0zm1341.28 384h299.532l-445 768 286.75 512H1183l-286.72-512 445-768zM485.626 640H767.97L934.81 896l-222.468 384H429.97l222.467-384-166.812-256z"
+          fill="#00605e"/>
+</svg>

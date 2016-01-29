@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0" >
+    <filter root="/etc/clientlibs/custom/axaguidedropdownlist"/>
+    <filter root="/apps/aemformsamples/components/axaguidedropdownlist"/>
+    <filter root="/etc/clientlibs/aemformsamples/axastyleguide"/>
+</workspaceFilter>
