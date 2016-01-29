@@ -163,3 +163,38 @@ with
 [article](https://helpx.adobe.com/aem-forms/6-1/custom-appearance-widget-adaptive-form.html) explains how to create
 that. For the purpose of this tutorial make sure you specify the name of the widget while creating maven project to
 axaguidedropdownlist.
+
+* After creating the widget make the changes as present in this github
+[link](https://github.com/vdua/aem-forms/commit/ab99727f7f68f8ce2421ccf23552577cb015ed25)
+
+    * _widgetName property should match the name of the widget i.e.
+    ```
+      $.xfawidget("xfawidget.<someName>", baseWidget, {
+        _widgetName : "<someName2>" // someName2 should exactly match someName,
+      })
+   ```
+
+* Now build the package and install it using Package Manager.
+
+* To use the widget you need to open the dialog of the field and specify the value of the class property as
+widget_<someName> where someName is the widgetName. So in this example, you need to specify *widget_axadropdownlist*
+
+* There is one small issue with the CSS rules which have been mentioned
+[here](https://github.com/vdua/aem-forms/commit/ab064218971d675369aa4e3565593f40d1b06c86#diff-fb851292487b27077c13972c40beb378L10)
+To fix them, make the changes as suggested.
+
+* The above change makes the value selected from widget propagate to the AF runtime. So that it gets submitted. But the
+  value set in the script is not reflected in the HTML. The reason for that is the jQuery dropdown plugin (that comes
+   with Style Guide) requires a function to be called whenever the value changes. To fix that we need to initialize the
+   dropdown jQuery plugin and add a listener for the value property. This has been done
+   [here](https://github.com/vdua/aem-forms/commit/ab064218971d675369aa4e3565593f40d1b06c86#diff-73af52ec520e9c3115f7a4a8007517d1L64)
+
+Build and deploy on CRX!
+
+### Limitation
+
+Note that this is just a sample and doesn't cover all the use cases that the dropdownlist should support. For example
+
+* Allowing multiple selection in dropdown field dialog will not work. Since that will require the html markup to change.
+* Dropping the component from Hierarchy tab in Content Finder will always use the OOTB DropDownField, to fix that you need
+  to overlay the OOTB component and make it look like the one we have developed here.
