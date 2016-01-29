@@ -1,0 +1,3 @@
+#base=javascript
+
+axaguidedropdownlist-widget.js
