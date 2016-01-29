@@ -16,17 +16,19 @@
      * - $.xfaWidget.XfaCheckBox: This is Out-of-the-box widget for Check box and radio buttons fields.
      */
 
-    $.widget( "xfaWidget.__widgetName__", $.xfaWidget.textField, {
-        _widgetName:"__widgetName__",
+    $.widget( "xfaWidget.axadropdownlist", $.xfaWidget.dropDownList, {
+        _widgetName:"axadropdownlist",
 
         /*
-         * The render function updates the HTML widget UI by invoking the JQuery plugin.
-         * Every Adaptive Forms field uses a default html element for taking input, example: for Date Field the element
-         * is <input type='date'>. The render function of the abstractWidget returns that element.
+         * The render function is assumed to make any changes in the HTML markup and return a control element
+         * input/field. this.element refers to the div having the .guidewidget class. By default the render function
+         * assumes the first child of this.element to be the control element. But for Axa Drop-down list, the markup
+         * is different so we need to redefine the function
          */
         render : function() {
-           var $el = $.xfaWidget.textField.prototype.render.apply(this,arguments);
-           return $el;
+            this.element.addClass(this._widgetName);
+            var $el = this.element.children("select");
+            return $el;
         },
 
         /*
@@ -57,15 +59,9 @@
          * widget).
          */
         getOptionsMap: function(){
-           var parentOptionsMap = $.xfaWidget.textField.prototype.getOptionsMap.apply(this,arguments),
-           newMap = $.extend({},parentOptionsMap,
-                               {
-                                   "displayValue":function(value) {
-                                       this.$userControl.val(value);
-                                   },
-                                   //...
-                              });
-           return newMap;
+            // Parent widget assumes the control element to be select which is valid here as well. So
+            // not changing anything and calling the super function
+            return $.xfaWidget.dropDownList.prototype.getOptionsMap.apply(this,arguments)
         },
 
         /*
@@ -77,13 +73,7 @@
          * a custom event may be dispatched, and the custom event may be mapped with the XFA event below.
          */
         getEventMap: function() {
-            var parentEventMap = $.xfaWidget.textField.prototype.getEventMap.apply(this,arguments),
-            newMap = $.extend({},parentEventMap,
-                               {
-                                    blur: "xfaexit",
-                                   //...
-                              });
-           return newMap;
+            return $.xfaWidget.dropDownList.prototype.getEventMap.apply(this,arguments);
         },
 
         /*
@@ -97,7 +87,7 @@
          * and it is the responsibility of the widget to implement how it wants these values to appear to the user.
          */
         showDisplayValue: function() {
-           this.$userControl.val(this.options.displayValue)
+           // do nothing since the display value of the dropdown remains same as the value
         },
 
         showValue: function() {

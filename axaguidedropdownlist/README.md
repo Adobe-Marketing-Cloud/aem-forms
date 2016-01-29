@@ -159,4 +159,7 @@ with
 <div data-dropdown="data-dropdown" class="<%= GuideConstants.GUIDE_FIELD_WIDGET%> dropdown">
 ```
 
-*
+* Using the maven-archetype: custom-appearance-archetype create a maven project. The
+[article](https://helpx.adobe.com/aem-forms/6-1/custom-appearance-widget-adaptive-form.html) explains how to create
+that. For the purpose of this tutorial make sure you specify the name of the widget while creating maven project to
+axaguidedropdownlist.
