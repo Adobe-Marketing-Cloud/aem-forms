@@ -1,0 +1,3 @@
+#base=javascript
+
+mask-text-widget-widget.js

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2048" height="2048" viewBox="0 0 2048 2048" fill-rule="evenodd"
+     clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414">
+    <title>Desktop</title>
+    <path d="M1280 1664H768c-10.288 90.124-76.032 191.168-128 192v64h768v-64c-83.143-51.523-117.65-107.164-128-192zm709.69-1535.853H58.307C26.105 128.147 0 154.252 0 186.454V1477.69c0 32.2 26.105 58.31 58.307 58.31H1989.69c32.2 0 58.31-26.11 58.31-58.31V186.454c0-32.202-26.11-58.307-58.31-58.307zM1920 1408H128V256h1792z"
+          fill-rule="nonzero"/>
+</svg>

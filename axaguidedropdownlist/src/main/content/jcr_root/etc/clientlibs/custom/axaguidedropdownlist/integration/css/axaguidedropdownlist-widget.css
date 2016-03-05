@@ -1,0 +1,31 @@
+/*
+ * The file is a template for adding CSS related to the appearance customization. In most of the cases this may not be
+ * required, and can be covered as part of the plugin.css in the jqueryplugin folder.
+ */
+
+ /*
+  * In case you want to add multiple files or use custom file name, place the file in the current location,
+  * and update the css.txt file in the parent folder to include the new files.
+  */
+
+/**
+ * Addition of guideWidget class on the dropdown div, sets the height to 38px in Adaptive Form. This happens because of
+ * the default Adaptive Form Theme. This leads to some gap between the svg element and the select list that becomes
+ * visible on click of the svg element.
+ * So for now, I have made the height to inherit the parent.
+ * The recommended way is to create a new custom theme for Guide and setting the less variable
+ * @widget-height to inherit or some default value that suits you.
+ * To create a custom theme see [1]
+ * [1] https://helpx.adobe.com/aem-forms/6/creating-custom-adaptive-form-themes.html
+ */
+.dropdown {
+  height: inherit;
+}
+
+/*
+ * In AF we put "position: relative" in the control elements. That piece of code has to be relooked. But since AXA
+ * requires select element to be absolutely positioned, it has to be done by making it important
+ */
+.dropdown__select.is-enhanced {
+ position: absolute !important;
+}
