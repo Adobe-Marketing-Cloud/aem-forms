@@ -177,7 +177,7 @@ axaguidedropdownlist.
 * Now build the package and install it using Package Manager.
 
 * To use the widget you need to open the dialog of the field and specify the value of the class property as
-widget_<someName> where someName is the widgetName. So in this example, you need to specify *widget_axadropdownlist*
+widget_someName where someName is the widgetName. So in this example, you need to specify *widget_axadropdownlist*
 
 * There is one small issue with the CSS rules which have been mentioned
 [here](https://github.com/vdua/aem-forms/commit/ab064218971d675369aa4e3565593f40d1b06c86#diff-fb851292487b27077c13972c40beb378L10)
