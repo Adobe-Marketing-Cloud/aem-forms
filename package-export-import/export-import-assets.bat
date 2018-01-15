@@ -31,19 +31,19 @@ if '%Operation%' == 'import' goto importTo63
 :exportFromES4
 	REM Export from ES4:
 	REM Install pre-migration utility
-	curl -u admin:%es4CRXPassword% -F file=@"CM-PRE-MIGRATION.zip" -F name="cm--premigration-package" -F force=true -F install=true http://%es4ServerIP%:%es4Serverport%/lc/crx/packmgr/service.jsp
+	curl -u admin:%es4CRXPassword% -F file=@"cm-pre-migration.zip" -F name="cm-pre-migration-package" -F force=true -F install=true http://%es4ServerIP%:%es4Serverport%/lc/crx/packmgr/service.jsp
 	
 	REM Run Pre-migration
 	curl -u administrator:%es4LCPassword% http://%es4ServerIP%:%es4Serverport%/lc/content/changeType.html?actionType=1
 	
 	REM Import an existing package with predefined filter: 
-	curl -u admin:%es4CRXPassword% -F file=@"FM_package.zip" -F name="FM_package" -F force=true -F install=false http://%es4ServerIP%:%es4Serverport%/lc/crx/packmgr/service.jsp
+	curl -u admin:%es4CRXPassword% -F file=@"form-manager-package.zip" -F name="form-manager-package" -F force=true -F install=false http://%es4ServerIP%:%es4Serverport%/lc/crx/packmgr/service.jsp
 
 	REM Build it on the ES4 server
-	curl -u admin:%es4CRXPassword% -X POST http://%es4ServerIP%:%es4Serverport%/lc/crx/packmgr/service/.json/etc/packages/my_packages/FM_package.zip?cmd=build
+	curl -u admin:%es4CRXPassword% -X POST http://%es4ServerIP%:%es4Serverport%/lc/crx/packmgr/service/.json/etc/packages/my_packages/form-manager-package.zip?cmd=build
 
 	REM Download the package locally as ExportedFMpkg.zip
-	curl -u admin:%es4CRXPassword% http://%es4ServerIP%:%es4Serverport%/lc/etc/packages/my_packages/FM_package.zip>ExportedFMpkg.zip
+	curl -u admin:%es4CRXPassword% http://%es4ServerIP%:%es4Serverport%/lc/etc/packages/my_packages/form-manager-package.zip>exported-form-manager-package.zip
 
 	exit /b 0
 
@@ -51,4 +51,4 @@ if '%Operation%' == 'import' goto importTo63
 	REM Import and install on 6.3 server :
 
 	REM Import the package exported from ES4: 
-	curl -u admin:%jeeCRXPassword% -F file=@"ExportedFMpkg.zip" -F name="ExportedFMpkg" -F force=true -F install=true http://%jee63ServerIP%:%jee63Serverport%/lc/crx/packmgr/service.jsp
+	curl -u admin:%jeeCRXPassword% -F file=@"exported-form-manager-package.zip" -F name="exported-form-manager-package" -F force=true -F install=true http://%jee63ServerIP%:%jee63Serverport%/lc/crx/packmgr/service.jsp
