@@ -2,6 +2,10 @@
 
 Use these scripts and packages to migrate Correspondence Management data from LiveCycle ES4 to AEM 6.3 Forms JEE installation.
 
+# Prerequisites
+
+Curl should be installed on machine and is set under PATH environment variable.
+
 # Running the Script
 
 The main script is export-import-assets.bat (or .sh file). The parameters used to run the script are in the script itself. So, before running the script, it needs to be modified and environment specific values need to be set. Following need to be set in the script:
