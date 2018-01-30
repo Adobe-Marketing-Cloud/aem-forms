@@ -2,7 +2,7 @@
 @rem * ADOBE CONFIDENTIAL
 @rem * ___________________
 @rem *
-@rem *  Copyright [first year code created] Adobe Systems Incorporated
+@rem *  Copyright 2018 Adobe Systems Incorporated
 @rem *  All Rights Reserved.
 @rem *
 @rem * NOTICE:  All information contained herein is, and remains
