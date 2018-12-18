@@ -1,0 +1,9 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "sling:resourceType":"fd/sample/af/components/aemform/v1/aemform",
+  "jcr:lastModifiedBy":"admin",
+  "formType":"adaptiveForm",
+  "formRef":"/content/dam/formsanddocuments/form1",
+  "themeRef" : "/path/to/theme",
+  "jcr:createdBy":"admin"
+}

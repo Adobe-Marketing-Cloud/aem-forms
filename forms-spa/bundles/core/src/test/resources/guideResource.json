@@ -1,0 +1,6 @@
+{
+  "jcr:primaryType": "dam:Asset",
+  "jcr:content": {
+    "guide" : 1
+  }
+}
