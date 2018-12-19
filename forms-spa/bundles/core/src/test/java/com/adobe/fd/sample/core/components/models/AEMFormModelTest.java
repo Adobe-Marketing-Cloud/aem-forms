@@ -14,10 +14,11 @@
  ~ limitations under the License.
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-package com.adobe.fd.core.components.models;
+package com.adobe.fd.sample.core.components.models;
 
 import com.adobe.cq.sightly.WCMBindings;
 import com.adobe.cq.wcm.core.components.testing.MockAdapterFactory;
+import com.adobe.fd.sample.core.components.models.AEMFormModel;
 import io.wcm.testing.mock.aem.junit.AemContext;
 import io.wcm.testing.mock.aem.junit.AemContextCallback;
 import org.apache.sling.api.resource.Resource;

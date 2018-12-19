@@ -8,7 +8,7 @@ For getting started on developing and authoring Single Page Applications (SPAs) 
 This project contains:
 
 * `content`: Content Package containing the [AEM Form](content/jcr_root/apps/fd/sample/af/components/aemform/v1/aemform) component.
-* `bundles/core`: Core bundle package containing the [sling model](bundles/core/src/main/java/com/adobe/fd/core/components/models/AEMFormModel.java) for AEMForm.
+* `bundles/core`: Core bundle package containing the [sling model](bundles/core/src/main/java/com/adobe/fd/sample/core/components/models/AEMFormModel.java) for AEMForm.
 * `react-component`: Sample react component for AEMForm to use it in AEM SPA Editor
 
 

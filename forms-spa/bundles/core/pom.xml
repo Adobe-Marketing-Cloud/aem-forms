@@ -21,7 +21,7 @@
     <!-- P A R E N T  P R O J E C T  D E S C R I P T I O N                      -->
     <!-- ====================================================================== -->
     <parent>
-        <groupId>com.adobe.fd</groupId>
+        <groupId>com.adobe.fd.sample</groupId>
         <artifactId>fd.components.parent</artifactId>
         <version>1.0-SNAPSHOT</version>
         <relativePath>../../pom.xml</relativePath>
@@ -60,7 +60,7 @@
                     <exportScr>true</exportScr>
                     <instructions>
                         <!-- The Sling-Model-Packages instruction needs to point to the implementation package -->
-                        <Sling-Model-Packages>com.adobe.fd.core.components.models</Sling-Model-Packages>
+                        <Sling-Model-Packages>com.adobe.fd.sample.core.components.models</Sling-Model-Packages>
                         <!-- Enable processing of OSGI DS component annotations -->
                         <_dsannotations>*</_dsannotations>
                         <!-- Enable processing of OSGI metatype annotations -->

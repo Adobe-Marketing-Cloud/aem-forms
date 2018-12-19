@@ -13,7 +13,7 @@
  ~ See the License for the specific language governing permissions and
  ~ limitations under the License.
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-package com.adobe.fd.core.components.models;
+package com.adobe.fd.sample.core.components.models;
 
 import com.adobe.aemds.guide.utils.GuideUtils;
 import com.adobe.cq.export.json.ComponentExporter;
