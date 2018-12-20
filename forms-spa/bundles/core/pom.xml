@@ -60,7 +60,7 @@
                     <exportScr>true</exportScr>
                     <instructions>
                         <!-- The Sling-Model-Packages instruction needs to point to the implementation package -->
-                        <Sling-Model-Packages>com.adobe.fd.sample.core.components.models</Sling-Model-Packages>
+                        <Sling-Model-Packages>com.adobe.fd.sample.components.models</Sling-Model-Packages>
                         <!-- Enable processing of OSGI DS component annotations -->
                         <_dsannotations>*</_dsannotations>
                         <!-- Enable processing of OSGI metatype annotations -->

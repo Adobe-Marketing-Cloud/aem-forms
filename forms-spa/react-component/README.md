@@ -1,5 +1,5 @@
 ## AEM Form React Component for SPA - Editor
-This package contains the AEMForm Component written in react to use in AEM SPA Editor.
+This package contains the AEM Form Component written in react to use in AEM SPA Editor.
 
 ## Steps:
 The following steps document how to include an aemform component in AEM SPA Editor:
